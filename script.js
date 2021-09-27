@@ -26,5 +26,5 @@ function compoundInterest() {
     document.getElementById("ciOutputContributions").innerHTML = "Total Contributions: $" + 
     (principal + (monthlyContributions * (timesCompounded * termOfInvestment))).toFixed(2);
     document.getElementById("ciOutputInterest").innerHTML = "Interest: $" + (futurePrincipal - principal).toFixed(2);
-    document.getElementById("ciOutputTotal").innerHTML = "Total plus interest: $" + futurePrincipal + amount;
+    document.getElementById("ciOutputTotal").innerHTML = "Total plus interest: $" + (futurePrincipal + amount);
 }
