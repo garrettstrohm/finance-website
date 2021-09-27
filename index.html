@@ -12,8 +12,21 @@
             <form id="ciForm">
                 <div class="formGroup">
                     <label for="initialInvestmentCompound">Initial Invested Amount</label>
-                    <input type="text" class="form-inputs" id="initialCompound" placeholder="Enter initial amount invested excluding a dollar sign"/>
+                    <input type="text" class="formInputs" id="initialCompound" placeholder="Enter initial amount invested excluding a dollar sign"/>
                 </div>
+                <div class="formGroup">
+                    <label for="monthlyContributions">Monthly Contributions</label>
+                    <input type="text" class="formInputs" id="contributionsCompound" placeholder="Enter monthly contributions without a dollar sign"/>
+                </div>
+                <div class="formGroup">   
+                    <label for="interestCompound">Expected Interest Rate</label>
+                    <input type="text" class="formInputs" id="rateCompound" placeholder="I.e. 7%"/>
+                </div>
+                <div class="formGroup">   
+                    <label for="timePeriodCompound">Number of Years Invested</label>
+                    <input type="text" class="formInputs" id="timeCompound" placeholder="Enter years i.e. 30"/>
+                </div>
+                <button type="submit" class="btn" id="btnCompound" onclick="compoundInterest()">Submit</button>
             </form>
         </div>
     </body>
