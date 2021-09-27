@@ -22,10 +22,10 @@ function compoundInterest() {
     let c = timesCompounded * termOfInvestment;
     let d = Math.pow(b, c);
     let amount = (principal * d).toFixed(2);
-    let futurePrincipal = monthlyContributions * ((d - 1) / a) * a;
-    let finalPrincipal = futurePrincipal + amount;
+    let futurePrincipal = monthlyContributions * (((b ** c) - 1) / a) * b;
+    let finalPrincipal = parseFloat(futurePrincipal + amount);
     document.getElementById("ciOutputContributions").innerHTML = "Total Contributions: $" + 
     (principal + (monthlyContributions * (timesCompounded * termOfInvestment))).toFixed(2);
-    document.getElementById("ciOutputInterest").innerHTML = "Interest: $" + (futurePrincipal - principal).toFixed(2);
-    document.getElementById("ciOutputTotal").innerHTML = "Total plus interest: $" + finalPrincipal;
+    document.getElementById("ciOutputInterest").innerHTML = "Interest: $" + (finalPrincipal - (principal + monthlyContributions * c)).toFixed(2);
+    document.getElementById("ciOutputTotal").innerHTML = "Total plus interest: $" + (finalPrincipal).toFixed(2);
 }
