@@ -20,9 +20,9 @@ function compoundInterest() {
     let a = interestRate / timesCompounded;
     let b = 1 + a;
     let c = timesCompounded * termOfInvestment;
-    let d = Math.pow(b, c);
+    let d = b ** c;
     let amount = (principal * d).toFixed(2);
-    let futurePrincipal = monthlyContributions * (((b ** c) - 1) / a) * b;
+    let futurePrincipal = parseFloat((monthlyContributions * (((b ** c) - 1)) / a) * b);
     let finalPrincipal = parseFloat(futurePrincipal + amount);
     document.getElementById("ciOutputContributions").innerHTML = "Total Contributions: $" + 
     (principal + (monthlyContributions * (timesCompounded * termOfInvestment))).toFixed(2);
