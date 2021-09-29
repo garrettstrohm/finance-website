@@ -9,7 +9,6 @@ submitBtn.addEventListener("click", compoundInterest());
  /*P(1+r/n)**(nt) is initial compound interest for the principal value;
     PMT*{[(1+r/n)**(nt)-1]/(r/n)} * (1+r/n) is the future value of a series 
     total = P(1+r/n)**(nt) + PMT*{[(1+r/n)**(nt)-1]/(r/n)} * (1+r/n)*/
-
 function compoundInterest() {
     let principal = parseFloat(document.getElementById("initialCompound").value);
     let monthlyContributions = parseFloat(document.getElementById("contributionsCompound").value);
