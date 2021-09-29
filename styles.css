@@ -9,6 +9,23 @@ h1 {
     box-shadow: 2px 2px 5px #000;
 }
 
+body {
+    width: 70%;
+    text-align: left;
+    margin: auto;
+}
+
+#dollarAverage {
+    display: block;
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 1px 4px 1px 4px;
+}
+
+.average {
+    margin: 5px;
+}
+
 .container {
     text-align: center;
     width: 40%;
