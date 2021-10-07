@@ -13,18 +13,18 @@ function compoundInterest() {
     let principal = parseFloat(document.getElementById("initialCompound").value);
     let monthlyContributions = parseFloat(document.getElementById("contributionsCompound").value);
     let interestRate = parseFloat(document.getElementById("interestCompound").value);
-    interestRate = interestRate / 100;
+    interestRate = (interestRate / 100).toFixed(3);
     let timesCompounded = parseFloat(document.getElementById("timeCompounded").value);
     let termOfInvestment = parseFloat(document.getElementById("termOfCompound").value);
     let a = interestRate / timesCompounded;
     let b = 1 + a;
     let c = timesCompounded * termOfInvestment;
     let d = b ** c;
-    let amount = (principal * d).toFixed(2);
-    let futurePrincipal = parseFloat((monthlyContributions * (((b ** c) - 1)) / a) * b);
-    let finalPrincipal = parseFloat(futurePrincipal + amount);
-    document.getElementById("ciOutputContributions").innerHTML = "Total Contributions: $" + 
-    (principal + (monthlyContributions * (timesCompounded * termOfInvestment))).toFixed(2);
-    document.getElementById("ciOutputInterest").innerHTML = "Interest: $" + (finalPrincipal - (principal + monthlyContributions * c)).toFixed(2);
-    document.getElementById("ciOutputTotal").innerHTML = "Total plus interest: $" + (finalPrincipal).toFixed(2);
+    let amount = (principal * d);
+    let futurePrincipal = (monthlyContributions * ((d - 1) / a));
+    let finalPrincipal = futurePrincipal + amount;
+    document.getElementById("ciOutputContributions").innerHTML = "Total Contributions: $" + ((principal + ((monthlyContributions * 12) * termOfInvestment))).toFixed(2);
+    document.getElementById("ciOutputInterest").innerHTML = "Interest: $" + (finalPrincipal - (principal + (monthlyContributions * 12) * termOfInvestment)).toFixed(2);
+    document.getElementById("ciOutputTotal").innerHTML = "Total plus interest: $" + finalPrincipal.toFixed(2);
 }
+
